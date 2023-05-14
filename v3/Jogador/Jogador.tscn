@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Jogador/Jogador.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "andar_baixo",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "andar_cima",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "andar_direita",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "andar_esquerda",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 14.0
+
+[node name="Jogador" type="KinematicBody2D"]
+collision_mask = 14
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "andar_esquerda"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 10 )
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
