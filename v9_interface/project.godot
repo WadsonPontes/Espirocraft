@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Espirocraft"
-run/main_scene="res://Niveis/Sandbox.tscn"
+run/main_scene="res://GUI/MenuPrincipal.tscn"
 config/icon="res://icon.png"
 
 [gui]

@@ -1,5 +1,13 @@
 extends "res://Personagens/Personagem.gd"
 
+func _process(delta):
+	atualizar_interface()
+	pass
+
+func atualizar_interface():
+	get_tree().call_group("HUD", "atualizar_vida", vida)
+	pass
+
 func _input(event):
 	if Input.is_action_just_pressed("ataque") and anim_tipo == "espada":
 		$AnimationPlayer.play("ataque" + anim_direcao)
